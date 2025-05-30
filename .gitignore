@@ -2,4 +2,4 @@
 /client/node_modules
 /back/node_modules
 /frontend/dist
-/backend/.env
+/back/.env
