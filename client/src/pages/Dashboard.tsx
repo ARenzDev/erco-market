@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+const API = import.meta.env.VITE_API_URL;
 
 interface Offer {
   _id: string;
@@ -23,7 +24,7 @@ const Dashboard: React.FC = () => {
     const fetchOffers = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:4000/api/offers/active"
+          `${API}/api/offers/active`
         );
         console.log("Respuesta del backend:", response.data); // <-- Añade esto
 
@@ -45,7 +46,7 @@ const Dashboard: React.FC = () => {
   const handleBuy = async (offerId: string) => {
     try {
       await axios.post(
-        `http://localhost:4000/api/offers/${offerId}/buy`,
+        `${API}/api/offers/${offerId}/buy`,
         {},
         {
           headers: {

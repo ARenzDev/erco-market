@@ -2,6 +2,8 @@ import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { jwtDecode } from "jwt-decode";
+const API = import.meta.env.VITE_API_URL;
+
 
 interface DecodedToken {
   userId: string;
@@ -21,7 +23,7 @@ const Login = () => {
     e.preventDefault();
     try {
       const res = await axios.post(
-        "http://localhost:4000/api/auth/login",
+        `${API}/api/auth/login`,
         form
       );
       localStorage.setItem("token", res.data.token);

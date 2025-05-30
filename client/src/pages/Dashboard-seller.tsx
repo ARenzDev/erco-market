@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+const API = import.meta.env.VITE_API_URL;
 const DashboardSeller: React.FC = () => {
   const navigate = useNavigate();
   const [showModal, setShowModal] = useState(false);
@@ -17,7 +18,7 @@ const DashboardSeller: React.FC = () => {
       const startUTC = new Date(windowStart).toISOString();
       const endUTC = new Date(windowEnd).toISOString();
       const response = await axios.post(
-        "http://localhost:4000/api/offers",
+        `${API}/api/offers`,
         {
           quantityKwh,
           pricePerKwh,

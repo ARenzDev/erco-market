@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+const API = import.meta.env.VITE_API_URL;
 
 const Register = () => {
   const navigate = useNavigate();
@@ -15,7 +16,7 @@ const Register = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:4000/api/auth/register", form);
+      await axios.post(`${API}/api/auth/register`, form);
       navigate("/login");
     } catch (err: unknown) {
       if (axios.isAxiosError(err)) {
