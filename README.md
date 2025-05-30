@@ -128,14 +128,17 @@ frontend/
 
 ---
 
-## 🚀 Próximos pasos
+##  Próximos pasos
 
 - Mejorar validaciones frontend (formato de fecha, campos vacíos)
 - Mostrar historial de transacciones por usuario
 - Panel para ver ofertas propias
-- Despliegue en producción (ej: Vercel + Render)
 
 ---
+
+## 🚀 Despliegue
+
+[erco](https://erco-market.vercel.app/)
 
 ## 🧑‍💻 Autor
 
